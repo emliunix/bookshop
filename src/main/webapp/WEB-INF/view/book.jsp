@@ -16,7 +16,7 @@
 <body class="container">
 <jsp:include page="/WEB-INF/fragments/admin_header.jsp" />
 <div class="row">
-<form class="form-horizontal" action="<s:url value="/pages/user/add" />" method="post">
+<form class="form-horizontal" action="<s:url value="/pages/book/add" />" method="post">
     <div class="form-group">
         <label>书名</label>
         <input type="text" name="name" placeholder="书名" />
@@ -31,8 +31,7 @@
     </div>
     <div class="form-group">
         <label>描述</label>
-        <textarea name="description" placeholder="图书描述">
-        </textarea>
+        <textarea name="description" placeholder="图书描述"></textarea>
     </div>
     <button type="submit">添加</button>
 </form>

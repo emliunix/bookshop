@@ -71,8 +71,13 @@ public class LogInOutController {
     }
 
     @RequestMapping("/sys/logout")
-    public void logout(HttpServletRequest req) {
+    public void logout(HttpServletRequest req, HttpServletResponse res) throws IOException {
         HttpSession sess = req.getSession(false);
-        sess.removeAttribute(USER_ATTRIBUTE);
+        if(null != sess)
+            sess.removeAttribute(USER_ATTRIBUTE);
+        String path = req.getContextPath();
+        if(Strings.isNullOrEmpty(path))
+            path = "/";
+        res.sendRedirect(path);
     }
 }

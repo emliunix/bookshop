@@ -24,7 +24,7 @@
     <jsp:include page="/WEB-INF/fragments/admin_header.jsp" />
     <div class="well ">
         <h1 class="l-header">admin home page</h1>
-    </div>admin home page
+    </div>
 </div>
 <jsp:include page="/WEB-INF/fragments/inc_bootstrap_post.jsp" />
 </body>

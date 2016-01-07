@@ -34,7 +34,7 @@
                 %>
                 <c:choose>
                     <c:when test="${null != user}">
-                        <li><a href="<s:url value="/pages/logout"/>">${user.username} 退出</a> </li>
+                        <li><a href="<s:url value="/pages/sys/logout"/>">${user.username} 退出</a> </li>
                     </c:when>
                     <c:otherwise>
                         <li><a href="<s:url value="/pages/login"/>">登录</a> </li>
