@@ -16,11 +16,31 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
+    public List<User> getAll() {
+        return userMapper.getAll();
+    }
+
+    public User getByName(String username) {
+        return userMapper.getByName(username);
+    }
+
+    public User getById(int id) {
+        return userMapper.getById(id);
+    }
+
     public void insert(User user) {
         userMapper.insert(user);
     }
 
-    public List<User> getAll() {
-        return userMapper.getAll();
+    public void update(User user) {
+        userMapper.update(user);
+    }
+
+    public void delete(User user) {
+        userMapper.delete(user);
+    }
+
+    public void deleteById(int id) {
+        userMapper.deleteById(id);
     }
 }

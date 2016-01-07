@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="bookshop.user">
+<mapper namespace="org.j2ee.bookshop.mapper.UserMapper">
     <select id="getAll" resultType="org.j2ee.bookshop.domain.User">
         SELECT * FROM user;
     </select>
 
     <select id="getById" parameterType="int" resultType="org.j2ee.bookshop.domain.User">
-        SELECT * FROM user WHERE id = ${value}
+        SELECT * FROM user WHERE id = #{value}
     </select>
 
     <select id="getByName" parameterType="String" resultType="org.j2ee.bookshop.domain.User">
-        SELECT * FROM user WHERE username = ${value}
+        SELECT * FROM user WHERE username = #{value}
     </select>
     
     <insert id="insert" parameterType="org.j2ee.bookshop.domain.User">
-        INSERT INTO user (username, password) VALUES (${username}, ${password})
+        INSERT INTO user (username, password, role) VALUES (#{username}, #{password}, #{role})
     </insert>
 
     <update id="update" parameterType="org.j2ee.bookshop.domain.User">
-        UPDATE user SET username = ${username}, password = ${password}
-        WHERE id = ${id}
+        UPDATE user SET username = #{username}, password = #{password}
+        WHERE id = #{id}
     </update>
 
     <delete id="delete" parameterType="org.j2ee.bookshop.domain.User">
-        DELETE FROM user WHERE id = ${id}
+        DELETE FROM user WHERE id = #{id}
     </delete>
 
     <delete id="deleteById" parameterType="int">
-        DELETE FROM user WHERE id = ${value}
+        DELETE FROM user WHERE id = #{value}
     </delete>
 </mapper>

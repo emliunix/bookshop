@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>Book Shop</title>
+    <jsp:include page="/WEB-INF/fragments/inc_bootstrap_pre.jsp" />
 </head>
-<body>
-
+<body class="container">
+<h1>This is header</h1>
+<jsp:include page="/WEB-INF/fragments/inc_bootstrap_post.jsp" />
 </body>
 </html>

@@ -13,4 +13,8 @@ public class Home {
     public String homePage() {
         return "home";
     }
+    @RequestMapping("/admin")
+    public String adminPage() {
+        return "admin";
+    }
 }

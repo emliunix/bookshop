@@ -8,10 +8,13 @@
 
        <context:property-placeholder location="classpath:jdbc.properties" />
 
+       <context:component-scan base-package="org.j2ee.bookshop.service" />
+
        <!-- session factory -->
 
        <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
                init-method="init" destroy-method="close">
+              <property name="url" value="${jdbc.url}" />
               <property name="driverClassName" value="${jdbc.driver}" />
               <property name="username" value="${jdbc.username}" />
               <property name="password" value="${jdbc.password}" />
@@ -52,6 +55,10 @@
 
        <bean id="userMapper" parent="baseMapper">
               <property name="mapperInterface" value="org.j2ee.bookshop.mapper.UserMapper" />
+       </bean>
+
+       <bean id="bookMapper" parent="baseMapper">
+              <property name="mapperInterface" value="org.j2ee.bookshop.mapper.BookMapper" />
        </bean>
 
 </beans>
